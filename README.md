@@ -47,4 +47,4 @@ peer chaincode query -C mychannel -n basic -c '{"Args":["ViewParticularProduct",
 //This will query the ViewParticularProduct function with following parameter.
 
 
-//Similarly this could be done for subsequent functions as well.
+//Similarly this could be done for subsequent functions as well. Furthermore the above functions could be executed through SDK functions as well.
