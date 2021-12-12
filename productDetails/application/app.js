@@ -87,7 +87,7 @@ async function main() {
 			result = await contract.submitTransaction('RemoveProduct', 'product1');
 			console.log(`*** Result: ${prettyJSONString(result.toString())}`);
 
-			console.log('\n--> Evaluate Transaction: RemoveProduct, function removes all assets');
+			console.log('\n--> Evaluate Transaction: RemoveAllProducts, function removes all assets');
 			result = await contract.submitTransaction('RemoveAllProducts');
 			console.log(`*** Result: ${prettyJSONString(result.toString())}`);
 			
