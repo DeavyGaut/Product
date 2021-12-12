@@ -1,6 +1,6 @@
 # Product Assignment
 
-################################# Generate Certificates and System Channel ###############################################
+############### Generate Certificates and System Channel ####################
 
 export PATH=${PWD}/../bin:${PWD}:$PATH
 export FABRIC_CFG_PATH=${PWD}/configtx
@@ -15,19 +15,19 @@ configtxgen -profile TwoOrgsOrdererGenesis -channelID system-channel -outputBloc
 
 IMAGE_TAG=latest docker-compose -f docker/docker-compose-test-net.yaml 
 
-############################################ Create Channel #####################################################
+############### Create Channel ################
 
 ./network.sh createChannel -c mychannel
 
 //It will create the channel artifacts, will connect peers to the channel and update anchor peers.
 
-############################################ Deploy Chaincode #####################################################
+########### Deploy Chaincode ##############
 
 ./network.sh deployCC -ccn basic -ccp ../productDetails/chaincode/ -ccl javascript
 
 //Here it will package the chaincode, install it on all the peers. Query the installed chaincodes. Approve it. and check the commit readiness.
 
-############################################ Chaincode Interaction #####################################################
+########### Chaincode Interaction ##############
 
 source ./scripts/setPeerConnectionParam.sh 1 2
 //This will set the endorsing peers.
